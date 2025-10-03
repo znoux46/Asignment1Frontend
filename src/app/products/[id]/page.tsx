@@ -8,21 +8,21 @@ export default async function ProductDetail({ params }: Props) {
   const { id } = await params;
   const product = await api.getProduct(Number(id));
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold">{product.name}</h1>
+        <h1 className="text-2xl font-semibold" style={{color:"var(--accent)"}}>{product.name}</h1>
         <div className="flex gap-2">
-          <Link href={`/products/${product.id}/edit`} className="rounded border px-3 py-1.5 text-sm">Edit</Link>
+          <Link href={`/products/${product.id}/edit`} className="btn-outline">Edit</Link>
           <DeleteButton id={product.id} />
-          <Link href={`/`} className="rounded border px-3 py-1.5 text-sm">Back</Link>
+          <Link href={`/`} className="btn-outline">Back</Link>
         </div>
       </div>
       {product.imageUrl ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={product.imageUrl} alt={product.name} className="w-full max-w-xl rounded" />
+        <img src={product.imageUrl} alt={product.name} className="w-full max-w-2xl rounded-lg border-2" />
       ) : null}
-      <p className="text-gray-700">{product.description}</p>
-      <p className="font-medium">${product.price.toFixed(2)}</p>
+      <p className="text-gray-700 text-base">{product.description}</p>
+      <p className="font-extrabold text-3xl" style={{color:"var(--accent)"}}>${product.price.toFixed(2)}</p>
     </div>
   );
 }

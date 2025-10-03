@@ -26,16 +26,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}>
-        <header className="border-b bg-black/20 backdrop-blur">
-          <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
+        <header className="sticky top-0 z-20 border-b bg-white/90 backdrop-blur">
+          <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
             <Link href="/" className="text-lg font-semibold" style={{color:"var(--accent)"}}>Products</Link>
-            <div className="flex gap-3">
+            <div className="flex items-center gap-4 text-sm">
               <Link href="/" className="btn-outline">Home</Link>
               <Link href="/products/new" className="btn-accent">Add Product</Link>
             </div>
           </nav>
         </header>
-        <main className="mx-auto max-w-5xl px-4 py-6">
+        <main className="mx-auto max-w-6xl px-4 py-6">
           {children}
         </main>
       </body>
