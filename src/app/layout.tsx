@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,10 +28,10 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}>
         <header className="border-b bg-black/20 backdrop-blur">
           <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-            <a className="text-lg font-semibold" style={{color:"var(--accent)"}} href="#" onClick={(e)=>{e.preventDefault(); window.location.href='/'}}>Products</a>
+            <Link href="/" className="text-lg font-semibold" style={{color:"var(--accent)"}}>Products</Link>
             <div className="flex gap-3">
-              <a className="text-sm text-gray-300 hover:text-white" href="#" onClick={(e)=>{e.preventDefault(); window.location.href='/'}}>Home</a>
-              <a className="btn-accent" href="#" onClick={(e)=>{e.preventDefault(); window.location.href='/products/new'}}>Add Product</a>
+              <Link href="/" className="text-sm text-gray-300 hover:text-white">Home</Link>
+              <Link href="/products/new" className="btn-accent">Add Product</Link>
             </div>
           </nav>
         </header>
