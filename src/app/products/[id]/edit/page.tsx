@@ -15,8 +15,9 @@ export default function EditProduct() {
       try {
         const p = await api.getProduct(Number(params.id));
         setInitial({ name: p.name, description: p.description ?? "", price: p.price });
-      } catch (e: any) {
-        setError(e?.message || "Failed to load");
+      } catch (e: unknown) {
+        const message = e instanceof Error ? e.message : "Failed to load";
+        setError(message);
       } finally {
         setLoading(false);
       }
@@ -28,8 +29,9 @@ export default function EditProduct() {
       setError(null);
       await api.updateProduct(Number(params.id), formData);
       router.push(`/products/${params.id}`);
-    } catch (e: any) {
-      setError(e?.message || "Failed to update");
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : "Failed to update";
+      setError(message);
     }
   }
 

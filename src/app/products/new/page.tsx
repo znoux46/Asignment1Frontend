@@ -14,8 +14,9 @@ export default function NewProduct() {
       setError(null);
       await api.createProduct(formData);
       router.push("/");
-    } catch (e: any) {
-      setError(e?.message || "Failed to create");
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : "Failed to create";
+      setError(message);
     } finally {
       setSubmitting(false);
     }
