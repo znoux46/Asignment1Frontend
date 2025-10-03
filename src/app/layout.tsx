@@ -30,7 +30,7 @@ export default function RootLayout({
           <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
             <Link href="/" className="text-lg font-semibold" style={{color:"var(--accent)"}}>Products</Link>
             <div className="flex gap-3">
-              <Link href="/" className="text-sm text-gray-300 hover:text-white">Home</Link>
+              <Link href="/" className="btn-outline">Home</Link>
               <Link href="/products/new" className="btn-accent">Add Product</Link>
             </div>
           </nav>

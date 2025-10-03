@@ -42,7 +42,7 @@ export default function NewProduct() {
         <label className="text-sm" htmlFor="image">Image</label>
         <input type="file" name="ImageUrl" id="image" accept="image/*" className="w-full rounded border px-3 py-2" />
       </div>
-      <button disabled={submitting} className="rounded bg-black px-4 py-2 text-white disabled:opacity-50">
+      <button disabled={submitting} className="btn-accent disabled:opacity-50">
         {submitting ? 'Saving...' : 'Save'}
       </button>
     </form>

@@ -58,7 +58,7 @@ export default function EditProduct() {
         <label className="text-sm" htmlFor="image">Image (optional)</label>
         <input type="file" name="ImageUrl" id="image" accept="image/*" className="w-full rounded border px-3 py-2" />
       </div>
-      <button className="rounded bg-black px-4 py-2 text-white">Update</button>
+      <button className="btn-accent">Update</button>
     </form>
   );
 }
