@@ -24,10 +24,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}>
+        <header className="border-b bg-black/20 backdrop-blur">
+          <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
+            <a href="/" className="text-lg font-semibold" style={{color:"var(--accent)"}}>Products</a>
+            <div className="flex gap-3">
+              <a href="/" className="text-sm text-gray-300 hover:text-white">Home</a>
+              <a href="/products/new" className="btn-accent">Add Product</a>
+            </div>
+          </nav>
+        </header>
+        <main className="mx-auto max-w-5xl px-4 py-6">
+          {children}
+        </main>
       </body>
     </html>
   );
